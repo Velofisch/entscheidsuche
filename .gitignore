@@ -1,0 +1,19 @@
+# Python
+*.pyc
+*.egg-info
+.eggs
+
+# OS-generated
+Thumbs.db
+.DS_Store
+
+# Various
+*.swp
+.idea
+.cache/
+
+# Scrapy
+/scrapy.iml
+
+# Project-specific
+*.pdf
