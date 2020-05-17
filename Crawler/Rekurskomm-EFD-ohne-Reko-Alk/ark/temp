@@ -1,0 +1,68 @@
+[?25l[J[J[J[?12l[?25h[?1049h[?1h=[1;50r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[50;1HE325: ATTENTION
+Found a swap file by the name "ark/spiders/.arks.py.swp"
+[10Cowned by: peter   dated: Thu Mar  1 10:11:10 2018
+[9Cfile name: ~peter/testumgebung/ark/ark/spiders/arks.py
+[10Cmodified: YES
+[9Cuser name: peter   host name: arjw
+[8Cprocess ID: 19251 (still running)
+While opening file "ark/spiders/arks.py"
+[13Cdated: Thu Mar  1 10:08:19 2018
+
+(1) Another program may be editing the same file.  If this is the case,
+    be careful not to end up with two different instances of the same
+    file when making changes.  Quit, or continue with caution.
+(2) An edit session for this file crashed.
+    If this is the case, use ":recover" or "vim -r ark/spiders/arks.py"
+    to recover the changes (see ":help recovery").
+    If you did this already, delete the swap file "ark/spiders/.arks.py.swp"
+    to avoid this message.
+
+Swap file "ark/spiders/.arks.py.swp" already exists!
+[O]pen Read-Only, (E)dit anyway, (R)ecover, (Q)uit, (A)bort:[?12l[?25h[50;1H[K[50;1H
+[?25l"ark/spiders/arks.py"[49;1H"ark/spiders/arks.py" 48 lines, 1857 characters[50;1H[K[50;1HPress ENTER or type command to continue[1;1H[L[1;1H# -*- coding: utf-8 -*-
+import scrapy
+
+
+class ArksSpider(scrapy.Spider):
+    name = 'arks'
+    allowed_domains = ['ark-cra.ch']
+    start_urls = ['http://www.ark-cra.ch/emark/2006.htm',[9;19H'http://www.ark-cra.ch/emark/2005.htm',[10;19H'http://www.ark-cra.ch/emark/2004.htm',[11;19H'http://www.ark-cra.ch/emark/2003.htm',[12;19H'http://www.ark-cra.ch/emark/2002.htm',[13;19H'http://www.ark-cra.ch/emark/2001.htm',[14;19H'http://www.ark-cra.ch/emark/2000.htm',[15;19H'http://www.ark-cra.ch/emark/1999.htm',[16;19H'http://www.ark-cra.ch/emark/1998.htm',[17;19H'http://www.ark-cra.ch/emark/1997.htm',[18;19H'http://www.ark-cra.ch/emark/1996.htm',[19;19H'http://www.ark-cra.ch/emark/1995.htm',[20;19H'http://www.ark-cra.ch/emark/1994.htm',[21;19H'http://www.ark-cra.ch/emark/1993.htm'][23;5Hdef parse(self, response):[24;9Hlinks = response.xpath('//tr/td/a[contains(@href, ".htm") and (contains(@href, "19") or contains(@href, "20"))]  [25;1H[not(contains(@href, "mit"))]')[26;9Hfor link in links:[27;13Hurl = response.urljoin(link.xpath('@href').extract_first())[28;13Hreferenz = link.xpath('normalize-space(text())').extract_first().strip().encode('utf-8')
+
+            ref = str(referenz)
+            ref = ref.replace('/', '-')[31;40H[K[32;11H  ref = ref.replace(' ', '')+'.htm'[32;47H[K[33;10H[K[34;11H  item=decision()[35;10H   item['referenz'] = ref[35;35H[K[36;9H    item['url'] = url[36;30H[K[37;1H            item['file_urls'] = [url][37;38H[K[38;1H#[12Cyield item[38;25H[K[39;1H#[12Cself.zaehler = self.zaehler+1[40;1H[K[41;5H        print 'URL: '+str(url)[41;35H[K[42;5H        print 'Referenz: '+ref[42;35H[K[43;1H[K[44;1Hclass decision(scrapy.Item):[44;30H[K[45;5Hurl = scrapy.Field()[45;25H[K[46;5Hfile_urls = scrapy.Field()[46;31H[K[47;5Hfiles = scrapy.Field()
+    referenz = scrapy.Field()[49;1H[K[50;1H[K[1;1H[?12l[?25h[?25l[50;1HType  :quit<Enter>  to exit Vim[1;1H[?12l[?25h[?25l[?12l[?25h
+
+
+[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h
+
+    
+    
+    [9;19H[10;19H[11;19H[12;19H[13;19H[14;19H[15;19H[16;19H[17;19H[18;19H[19;19H[20;19H[21;19H
+
+    [24;9H[26;9H[27;13H[28;13H
+[30;13H[31;13H[32;13H
+[34;13H[35;13H[36;13H[37;13H
+
+
+[41;13H[50;1H
+[?1l>[?1049l[?1049h[?1h=[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[1;1H# -*- coding: utf-8 -*-
+import scrapy
+
+
+class ArksSpider(scrapy.Spider):
+    name = 'arks'
+    allowed_domains = ['ark-cra.ch']
+    start_urls = ['http://www.ark-cra.ch/emark/2006.htm',[9;19H'http://www.ark-cra.ch/emark/2005.htm',[10;19H'http://www.ark-cra.ch/emark/2004.htm',[11;19H'http://www.ark-cra.ch/emark/2003.htm',[12;19H'http://www.ark-cra.ch/emark/2002.htm',[13;19H'http://www.ark-cra.ch/emark/2001.htm',[14;19H'http://www.ark-cra.ch/emark/2000.htm',[15;19H'http://www.ark-cra.ch/emark/1999.htm',[16;19H'http://www.ark-cra.ch/emark/1998.htm',[17;19H'http://www.ark-cra.ch/emark/1997.htm',[18;19H'http://www.ark-cra.ch/emark/1996.htm',[19;19H'http://www.ark-cra.ch/emark/1995.htm',[20;19H'http://www.ark-cra.ch/emark/1994.htm',[21;19H'http://www.ark-cra.ch/emark/1993.htm'][23;5Hdef parse(self, response):[24;9Hlinks = response.xpath('//tr/td/a[contains(@href, ".htm") and (contains(@href, "19") or contains(@href, "20"))] [not(contains(@href, "mit")))[25;1H]')[26;9Hfor link in links:[27;13Hurl = response.urljoin(link.xpath('@href').extract_first())[28;13Hreferenz = link.xpath('normalize-space(text())').extract_first().strip().encode('utf-8')[30;13Href = str(referenz)[31;13Href = ref.replace('/', '-')[32;13Href = ref.replace(' ', '')+'.htm'[34;13Hitem=decision()[35;13Hitem['referenz'] = ref[36;13Hitem['url'] = url[37;13Hitem['file_urls'] = [url]
+#[12Cyield item
+#[12Cself.zaehler = self.zaehler+1[41;13Hprint 'URL: '+str(url)[42;13Hprint 'Referenz: '+ref
+
+class decision(scrapy.Item):
+    url = scrapy.Field()
+    file_urls = scrapy.Field()
+    files = scrapy.Field()
+    referenz = scrapy.Field()[41;13H[?12l[?25h[50;1H
+[32mW11: Warning: File "ark/spiders/arks.py" has changed since editing started[m
+[32mSee ":help W11" for more info.[m
+[32m[O]K, (L)oad File: [m[?1l>[?1049lVim: Caught deadly signal HUP
+Vim: Finished.
+[50;1H
